@@ -1,11 +1,35 @@
+body {
+    background: #e1eec3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.full-height {
+    // height: 100vh;
+    min-height: calc(100vh - 7.5rem);
+}
+
+$navbar-background-color: #e1eec3;
+$navbar-item-color: #f05053;
+$navbar-burger-color: #f05053;
+$navbar-item-hover-color: #f05053;
+$navbar-item-hover-background-color: #d0e2a6;
+
+$primary: #daf1a3;
+$warning: #f05053;
+
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
 @import "../node_modules/bulma/sass/grid/columns.sass";
 @import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/box.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/elements/content.sass";
 @import "../node_modules/bulma/sass/components/navbar.sass";
 @import "../node_modules/bulma/sass/helpers/color.sass";
 @import "../node_modules/bulma/sass/helpers/typography.sass";
 @import "../node_modules/bulma/sass/helpers/spacing.sass";
 @import "../node_modules/bulma/sass/layout/hero.sass";
 @import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";

@@ -3,7 +3,7 @@
         <div class="navbar-brand">
             <a class="navbar-item is-size-4" href="#/">
                 <span class="icon-text">
-                    <span><strong>Svelte-Bulma-Boilerplate</strong></span>
+                    <span><strong>Pomo Timer</strong></span>
                 </span>
             </a>
       

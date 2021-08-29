@@ -1,7 +1,6 @@
 <script>
 import { onMount } from "svelte";
 
-
 	let active = false;
 	let isStarted = false;
 	let workTime = 25;
@@ -9,7 +8,6 @@ import { onMount } from "svelte";
 	let longBreak = 20;
 	let loopsPerLongBreak = 3;
 	let currentTime;
-	// let current;
 	let currentDisplayTime = '';
 	let onBreak = false;
 	let loop = 1;
@@ -86,112 +84,103 @@ import { onMount } from "svelte";
 </script>
 
 <main>
-	<div class="full-height">
-		<div class="container">
-			<div class="columns is-centered is-vcentered has-text-centered">
-				<div class="column is-8">
-					<div class="section mt-5" id="title">
-						<h1 class="title is-1 has-text-white">Pomodoro Timer</h1>
-						<h2 class="subtitle is-3 has-text-white">Keep yourself focused!</h2>
-					</div>
-					<div class="box">
-						<div class="section">
-							<div class="columns is-centered is-vcentered is-multiline has-text-centered is-mobile">
-								<div class="column is-full has-text-centered">
-									<h1 class="title">{runText}</h1>
-									<h1 class="timer title is-1 has-text-dark">
-										{currentDisplayTime}
-									</h1>
-								</div>
-								{#if !active}
-								<div class="column is-full is-centered">
-									<!-- build out the settings options -->
-									<div class="field is-horizontal">
-										<div class="field-label is-small">
-											<label class="label" for="">Working Session</label>
-										</div>
-										<div class="field-body">
-											<div class="field has-addons">
-												<p class="control">
-												<input class="input" bind:value="{workTime}" type="number" placeholder="25" disabled={isStarted}>
-												</p>
-												<p class="control">
-													<!-- svelte-ignore a11y-missing-attribute -->
-													<a class="button is-static">
-														Minutes
-													</a>
-												</p>
-											</div>
+	<div class="section">
+		<div class="full-height">
+			<div class="container">
+				<div class="columns is-centered is-vcentered has-text-centered">
+					<div class="column is-8">
+						<div class="section" id="title">
+							<h1 class="title is-1 has-text-white">Pomodoro Timer</h1>
+							<h2 class="subtitle is-3 has-text-white">Keep yourself focused!</h2>
+						</div>
+						<div class="box">
+							<div class="section">
+								<div class="columns is-centered is-vcentered is-multiline has-text-centered is-mobile">
+									<div class="column is-full has-text-centered">
+										<h1 class="title">{runText}</h1>
+										<h1 class="timer title is-1 has-text-dark">
+											{currentDisplayTime}
+										</h1>
+									</div>
+									{#if !active}
+									<div class="column is-one-third has-text-right">
+										<strong>Working Session</strong>
+									</div>
+									<div class="column is-two-thirds">
+										<div class="field has-addons">
+											<p class="control">
+											<input class="input" bind:value="{workTime}" type="number" placeholder="25" disabled={isStarted}>
+											</p>
+											<p class="control">
+												<!-- svelte-ignore a11y-missing-attribute -->
+												<a class="button is-static">
+													Minutes
+												</a>
+											</p>
 										</div>
 									</div>
-									<div class="field is-horizontal">
-										<div class="field-label is-small">
-											<label class="label" for="">Short Break</label>
-										</div>
-										<div class="field-body">
-											<div class="field has-addons">
-												<p class="control">
-												<input class="input" bind:value="{shortBreak}" type="number" placeholder="5" disabled={isStarted}>
-												</p>
-												<p class="control">
-													<!-- svelte-ignore a11y-missing-attribute -->
-													<a class="button is-static">
-														Minutes
-													</a>
-												</p>
-											</div>
+									<div class="column is-one-third has-text-right">
+										<strong>Short Break</strong>
+									</div>
+									<div class="column is-two-thirds">
+										<div class="field has-addons">
+											<p class="control">
+											<input class="input" bind:value="{shortBreak}" type="number" placeholder="5" disabled={isStarted}>
+											</p>
+											<p class="control">
+												<!-- svelte-ignore a11y-missing-attribute -->
+												<a class="button is-static">
+													Minutes
+												</a>
+											</p>
 										</div>
 									</div>
-									<div class="field is-horizontal">
-										<div class="field-label is-small">
-											<label class="label" for="">Long Break</label>
-										</div>
-										<div class="field-body">
-											<div class="field has-addons">
-												<p class="control">
-												<input class="input" bind:value="{longBreak}" type="number" placeholder="20" disabled={isStarted}>
-												</p>
-												<p class="control">
-													<!-- svelte-ignore a11y-missing-attribute -->
-													<a class="button is-static">
-														Minutes
-													</a>
-												</p>
-											</div>
+									<div class="column is-one-third has-text-right">
+										<strong>Long Break</strong>
+									</div>
+									<div class="column is-two-thirds">
+										<div class="field has-addons">
+											<p class="control">
+											<input class="input" bind:value="{longBreak}" type="number" placeholder="20" disabled={isStarted}>
+											</p>
+											<p class="control">
+												<!-- svelte-ignore a11y-missing-attribute -->
+												<a class="button is-static">
+													Minutes
+												</a>
+											</p>
 										</div>
 									</div>
-									<div class="field is-horizontal">
-										<div class="field-label is-small">
-											<label class="label" for="">Sessions Per Break</label>
-										</div>
-										<div class="field-body">
-											<div class="field has-addons">
-												<p class="control">
-												<input class="input" bind:value="{loopsPerLongBreak}" type="number" placeholder="3" disabled={isStarted}>
-												</p>
-												<p class="control">
-													<!-- svelte-ignore a11y-missing-attribute -->
-													<a class="button is-static">
-														Sessions
-													</a>
-												</p>
-											</div>
+									<div class="column is-one-third has-text-right">
+										<strong>Long Break Every</strong>
+									</div>
+									<div class="column is-two-thirds">
+										<div class="field has-addons">
+											<p class="control">
+											<input class="input" bind:value="{loopsPerLongBreak}" type="number" placeholder="3" disabled={isStarted}>
+											</p>
+											<p class="control">
+												<!-- svelte-ignore a11y-missing-attribute -->
+												<a class="button is-static">
+													Sessions
+												</a>
+											</p>
 										</div>
 									</div>
-								</div>
-								<div class="field is-grouped mt-3">
-									<p class="control">
-										<button class="button is-primary" on:click="{run}">Start</button>
-										<button class="button is-warning" on:click="{clear}" disabled={!isStarted}>Reset</button>
-									</p>
-								</div>	
-								{:else}
 									<div class="field is-grouped mt-3">
 										<p class="control">
-											<button class="button is-primary" on:click="{run}">Pause</button>
+											<button class="button is-primary" on:click="{run}">Start</button>
+											<button class="button is-warning" on:click="{clear}" disabled={!isStarted}>Reset</button>
 										</p>
-									</div>
-								{/if}
+									</div>	
+									{:else}
+										<div class="field is-grouped mt-3">
+											<p class="control">
+												<button class="button is-primary" on:click="{run}">Pause</button>
+											</p>
+										</div>
+									{/if}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -203,7 +192,7 @@ import { onMount } from "svelte";
 
 <style>
 	#title > .title, #title > .subtitle {
-		text-shadow: 2px 2px grey;
+		text-shadow: 2px 2px rgb(46, 45, 45);
 	}
 
 </style>
