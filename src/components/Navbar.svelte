@@ -2,9 +2,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item is-size-4" href="#/">
-                <span class="icon-text">
-                    <span><strong>Pomo Timer</strong></span>
-                </span>
+              <img src="./pomo.svg" alt="Pomo Timer logo">
             </a>
       
           <!-- svelte-ignore a11y-missing-attribute -->

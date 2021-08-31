@@ -90,8 +90,8 @@ import { onMount } from "svelte";
 				<div class="columns is-centered is-vcentered has-text-centered">
 					<div class="column is-8">
 						<div class="section" id="title">
-							<h1 class="title is-1 has-text-white">Pomodoro Timer</h1>
-							<h2 class="subtitle is-3 has-text-white">Keep yourself focused!</h2>
+							<img src="./pomo.svg" alt="Pomo Timer logo">
+							<h2 class="subtitle is-3 has-text-white pt-2">Keep yourself focused!</h2>
 						</div>
 						<div class="box">
 							<div class="section">
